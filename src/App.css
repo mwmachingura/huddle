@@ -1,38 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    /* Colors */
+    --violet: hsl(257, 40%, 49%);
+    --softmagenta: hsl(300, 69%, 71%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--violet);
+    background-image: url('./images/bg-desktop.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 90%;
+}
+
+
+h1, h2, h3 , h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
 .App {
-  text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    padding-left: 10em;
+    padding-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+    width: 15%;
+    height: auto;
+    padding: 0 0 1em 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.content {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    column-gap: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.image {
+    width: 100%;
+    height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text {
+    width: 100%;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.text > h1 {
+    font-weight: 600;
+    padding: 2rem 0 2rem 0;
+}
+
+.text > p {
+    width: 85%;
+    font-size: 1rem;
+    padding: 0 1rem 1rem 0;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 50px;
+    padding: 0.5em 2.5em;
+    background-color: white;
+    color: var(--violet);
+    text-align: center;
+    width: max-content;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--softmagenta);
+}
+
+.social-media {
+    padding-top: 1.5rem;
+    width: 92.5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 0.825rem;
+}
+
+.icon {
+    font-size: 2rem;
+    color: white;
+    margin: 0 0.5rem;
+}
+
+.icon:hover {
+    color: var(--softmagenta);
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 10rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.attribution > a {
+    color: hsl(340, 60%, 20%);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.attribution > a:hover {
+    color: var(--softmagenta);
+}
+
+@media screen and (max-width: 365px) {
+    body {
+        background-image: url('./images/bg-mobile.svg');
+        background-position: top;
+        background-size: auto;
+    }
+
+    .App {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2, h3 , h4 {
+        font-weight: 400;
+    }
+
+    .container {
+        align-items: left;
+        padding: 1rem 2rem;
+    }
+    
+    .logo {
+        padding-bottom: 2rem;
+        width: 40%;
+    }
+
+    .content {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 2rem;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .text {
+        width: 100%;
+        height: 100%;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text > h1 {
+        font-size: 1.5rem;
+        padding: 1em 0 1em 0;
+    }
+
+    .text > p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.4em 2.6em;
+    }
+
+    .social-media {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .icon {
+        font-size: 1.5rem;
+        color: white;
+        margin: 0 0.5rem;
+    }
+
+    footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        color: white;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .attribution {
+        text-align: center;
+        font-size: 0.825rem;
+        width: 75%;
+        padding-bottom: 1rem;
+    }
 }
